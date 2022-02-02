@@ -2,4 +2,11 @@
 title: "About Me"
 ---
 
-Why I am awesome.
+− __Name:__ Malachy_McAvoy
+− __Ocupation:__ "Student"
+− __Hobbies:__ Learning data analytics.
+
+Here is a super cool photo.
+
+![](AboutMePhoto.jpg){
+width=50%}
