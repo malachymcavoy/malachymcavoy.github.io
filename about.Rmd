@@ -4,7 +4,7 @@ title: "About Me"
 
 − __Name:__ Malachy McAvoy
 
-− __Ocupation:__ Student
+− __Occupation:__ Student
 
 − __Hobbies:__ Learning data analytics.
 
