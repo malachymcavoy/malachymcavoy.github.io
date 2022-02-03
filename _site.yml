@@ -1,9 +1,15 @@
-name: "personal-website"
+name: "Malachy McAvoy's-website"
 output_dir: "."
 navbar:
-  title: "Personal Website"
+  title: "Malachy McAvoy's Website"
   left:
     - text: "Home"
       href: index.html
     - text: "About Me"
       href: about.html
+    - text: "Project"   ### the new
+      href: project.html ### stuff
+output:
+  html_document:
+  theme: default
+  css:  style.css
