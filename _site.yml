@@ -7,9 +7,9 @@ navbar:
       href: index.html
     - text: "About Me"
       href: about.html
-    - text: "Project"   ### the new
-      href: project.html ### stuff
+    - text: "Project"   
+      href: project.html
 output:
   html_document:
-  theme: default
-  css:  style.css
+    theme: default
+    css: style.css
