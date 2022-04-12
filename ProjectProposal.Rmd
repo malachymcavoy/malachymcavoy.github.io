@@ -1,0 +1,13 @@
+---
+title: "Data Visualization Project Proposal"
+author: "Malachy McAvoy"
+date: "2022-04-12"
+output: html_document
+---
+
+# DANL-310 Project Proposal   
+
+  For my proposal I decided to take my two biggest passions, coding and sports, and combine them to create a fun and interesting project. My project will utilize data from the NFL combine as well as players’ college statistics and awards to determine if there are any relationships between a player’s combine and college performances and their success in the NFL.
+	While a lot of this may seem ridiculous to an outsider, for those who are heavily invested into the game of football from fans all the way up to the owner, this kind of stuff matters. In the eyes of the front office they are spending invaluable amounts of time and money on the players they draft. If they make the wrong selection it could end up costing the franchise tens of millions of dollars in a bad contract. Not only can a bad pick hurt their current economic standing, consecutive bad drafts can set a franchise back years in their hopes of the ultimate goal, winning a Super Bowl. In order to maximize their draft picks, teams must now use every resource available to them to gain an edge. Modern day sports are moving towards analytics whether fans like it or not. It's about time every NFL team embraces this strategy and looks to the stats to determine a player’s potential.
+	I believe that a player’s performance at the combine measurements and in college are excellent indicators of a player’s NFL career. As result, my null hypothesis for this project is that a player’s performance at the combine and in college does not have an impact on a player’s success in the NFL. I have already collected data from Sports Reference on all players drafted over the last 20 years from 2001-2021, including their combine measurements. I did experience issues collecting the college data of drafted players from the website so I asked Professor Kirk Anne for some assistance with scraping the data. I will create dummy variables for each combine category and college stat to establish benchmarks at each position.
+
