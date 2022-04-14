@@ -7,7 +7,7 @@ navbar:
       href: index.html
     - text: "About Me"
       href: about.html
-    - text: "Project"   
+    - text: "Project" 
       href: project.html
 output:
   html_document:
