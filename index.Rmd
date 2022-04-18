@@ -2,5 +2,6 @@
 title: "Personal Website"
 ---
 
-Hello, World!
-Hello!
+How this was created
+* Hosted in Github
+* Built by Git and R Markdown with R Studio

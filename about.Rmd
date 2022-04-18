@@ -6,9 +6,13 @@ title: "About Me"
 
 − __Occupation:__ Student
 
-− __Hobbies:__ Learning data analytics.
+- __Major:__ Economics
 
-Here is a super cool photo.
+- __Minor:__ Data Analytics
+
+− __Hobbies:__ Football, Basketball, Lacrosse, Skiing, Golf, Music and Fishing
+
+Here is a photo of myself.
 
 ![](AboutMePhoto.jpg){
 width=50%}

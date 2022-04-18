@@ -7,8 +7,10 @@ navbar:
       href: index.html
     - text: "About Me"
       href: about.html
-    - text: "Project" 
-      href: project.html
+    - text: "Resume"
+      href: resume.html
+    - text: "Project Proposal" 
+      href: ProjectProposal.html
 output:
   html_document:
     theme: default
