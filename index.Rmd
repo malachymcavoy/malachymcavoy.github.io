@@ -6,7 +6,7 @@ output:
     highlight: tango
 ---
 
-How this was created:
+How this was created
 
 - Hosted in Github
 
