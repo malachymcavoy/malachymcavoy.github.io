@@ -2,17 +2,17 @@
 title: "About Me"
 ---
 
-− __Name:__ Malachy McAvoy
+__Name:__ Malachy McAvoy
 
-− __Occupation:__ Student
+__Occupation:__ Student
 
-- __Major:__ Economics
+__Major:__ Economics
 
-- __Minor:__ Data Analytics
+__Minor:__ Data Analytics
 
-− __Hobbies:__ Football, Basketball, Lacrosse, Skiing, Golf, Music and Fishing
+__Hobbies:__ Football, Basketball, Lacrosse, Skiing, Golf, Music and Fishing
 
-Here is a photo of myself.
+Here is a photo of myself:
 
 ![](AboutMePhoto.jpg){
 width=50%}
