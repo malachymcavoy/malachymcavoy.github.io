@@ -2,7 +2,10 @@
 title: "Data Visualization Project Proposal"
 author: "Malachy McAvoy"
 date: "2022-04-12"
-output: html_document
+output:
+  html_document:
+    theme: united
+    highlight: tango
 ---
 
 # DANL-310 Project Proposal   
