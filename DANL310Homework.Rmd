@@ -6,6 +6,17 @@ output: html_document
 # Question 1
 
 ```{r echo=FALSE}
+library(ggplot2)
+library(ggthemes)
+library(tidyverse)
+library(plotly)
+library(gganimate)
+library(gifski)
+library(transformr)
+library(magick)
+library(htmltools)
+theme_set(theme_bw())
+
 imf_growth <- read.csv(url('https://bcdanl.github.io/data/imf_growth_quarterly.csv'))
 
 imf_growth <- imf_growth %>% mutate(gy = round(gy, digits = 2))
