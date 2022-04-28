@@ -11,6 +11,8 @@ navbar:
       href: cv.html
     - text: "Resume"
       href: resume.html
+    - text: "DANL 310 Homework"
+      href: DANL310Homework.html
     - text: "Project Proposal" 
       href: ProjectProposal.html
 output:
