@@ -35,7 +35,7 @@ county_map <- county_map %>% mutate(id = as.numeric(id))
 
 climate_opinion <- left_join(climate_opinion, county_map, by = 'id')
 
-g <- ggplot(climate_opinion, aes(long, lat, fill = perc, group = group, text = GeoName))  + 
+g <- ggplot(climate_opinion, aes(long.x, lat.x, fill = perc, group = group, text = GeoName))  + 
       geom_polygon(color = "gray70", size = 0.05) + 
         coord_equal()
 g
