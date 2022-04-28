@@ -16,6 +16,7 @@ p <- ggplot(imf_growth, aes(x = reorder(country, -gy), y = gy, fill = country)) 
   labs(title = "Growth Rate of GDP per Worker: {closest_state}", x = "", y= "") + theme_minimal() + theme(legend.position = "none")
 
 p
+
 ```
 
 ![](GDPGrowthRate.gif)
