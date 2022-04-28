@@ -38,6 +38,7 @@ p
 library(socviz)
 library(plotly)
 
+climate_opinion <- read.csv('https://bcdanl.github.io/data/climate_opinion_2021.csv')
 county_map <- county_map
 
 climate_opinion <- climate_opinion %>% filter(belief == "human")
