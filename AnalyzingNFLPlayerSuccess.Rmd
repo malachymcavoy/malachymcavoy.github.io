@@ -1,7 +1,6 @@
 ---
 title: "Analyzing NFL Player Success"
 subtitle: Malachy McAvoy
-menu: main
 output: 
   html_document:
     df_print: paged
@@ -66,7 +65,7 @@ When cleaning the data I relied heavily on R and excel. I used many of the funct
 
 
 ```{r}
-
+Malachy2022_04_24
 stargazer(Malachy2022_04_24, type = "text", title="Descriptive statistics", digits=1, out="NFLSumStats.txt")
 ```
 
