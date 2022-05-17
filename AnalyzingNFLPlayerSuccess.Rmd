@@ -21,7 +21,7 @@ library(stargazer)
 # Introduction
 ## Project Motivation
 
-Team’s spend endless amounts of time and money preparing for the draft. In order to maximize their draft picks, teams must now use every resource available to them to gain an edge. Modern day sports are moving towards analytics whether fans like it or not. It’s about time every NFL team embraces this strategy and looks to the stats to determine a player’s potential. But the question still remains, does all this analyzing actually matter when determining how long and successful a player’s career will be? Or should teams just stick to the basics such as what school they played for or if they were an All-American in college? To analyze, this my model will look at the relationship between variables such as a player’s 40-yard dash time at the combine or what conference their college team played in and their effect on a player’s career weighted approximate value. 
+NFL teams spend endless amounts of time and money preparing for the draft. In order to maximize their draft picks, teams must now use every resource available to them to gain an edge. Modern day sports are moving towards analytics whether fans like it or not. It’s about time every NFL team embraces this strategy and looks to the stats to determine a player’s potential. But the question still remains, does all this analyzing actually matter when determining how long and successful a player’s career will be? Or should teams just stick to the basics such as what school they played for or if they were an All-American in college? To analyze, this my model will look at the relationship between variables such as a player’s 40-yard dash time at the combine or what conference their college team played in and their effect on a player’s career weighted approximate value. 
 
 
 <br>
@@ -62,12 +62,6 @@ For my analysis, I collected all of my data for the last 20 NFL drafts from Spor
 When cleaning the data I relied heavily on R and excel. I used many of the functions from the dplyr package in R to manipulate the data and remove any unwanted variables or duplicate observations. I noticed many NA and missing variables in the combine data which drove me towards using the lasso regression.
 
 ## NFL Draft Data
-
-
-```{r}
-rmarkdown::paged_table(Malachy2022_04_24)
-```
-
 
 
 
