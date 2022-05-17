@@ -48,9 +48,7 @@ county_map <- county_map %>% mutate(id = as.numeric(id))
 
 climate_opinion <- left_join(climate_opinion, county_map, by = 'id')
 
-g <- ggplot(climate_opinion, aes(long, lat, fill = perc, group = group, text = GeoName))  + 
-      geom_polygon(color = "gray70", size = 0.05) + 
-        coord_equal()
+g <- ggplot(climate_opinion, aes(long, lat, fill = perc, group = group, tooltip = GeoName, data_id = GeoName)) + geom_polygon_interactive(color = "gray70", size = 0.05) + coord_equal()
 g
 
 g2 <- g + scale_fill_gradient2(
@@ -87,6 +85,9 @@ g3 <- g2 + labs(fill = "Percent\nBelief", title = "U.S. Climate Opinion, 2021:\n
   guides(fill = guide_colourbar(direction = "horizontal", barwidth = 25, title.vjust = -1))
 
 library(plotly)
+
+g44 <- ggiraph(ggobj=g3)
+g44
 
 g4 <- ggplotly(g3) %>% layout(title = list(text = paste0("U.S. Climate Opinion, 2021",
                                              '<br>',

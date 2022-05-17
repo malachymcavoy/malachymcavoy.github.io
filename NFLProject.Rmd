@@ -1,0 +1,106 @@
+---
+title: "NFL Research Project"
+subtitle: "DANL 310 Final Presentation"
+menu: main
+output: 
+  html_document:
+    df_print: paged
+    toc: true
+    toc_depth: 2
+    toc_float: true
+    number_sections: false
+    theme: united
+    highlight: espresso
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+library(tidyverse)
+library(knitr)
+library(here)
+library(lubridate)
+library(kableExtra)
+library(DT)
+library(glue)
+library(readxl)
+library(stringi)
+library(fontawesome)
+
+#### publications #####
+publications <- read_csv("_content/publications.csv")
+
+#### all other entries #####
+cv_entries <- read_csv("_content/cv_entries.csv") %>%
+  mutate(year_begin = year(date)) %>%
+  mutate(year_end = case_when(
+    date_end == "present" ~ date_end,
+    !is.na(date_end) ~ str_sub(date_end, 1, 4),
+    is.na(date_end) ~ date_end
+  )) %>%
+  mutate(year = ifelse((is.na(year_end) | year_begin == year_end),
+                      year_begin,
+                      str_c(year_begin, " --- ", year_end)))
+
+
+blank_year_when_repeated <- function(cv_entry_tibble){
+  cv_entry_tibble %>% 
+    mutate(row_number = row_number()) %>% 
+    mutate(year_begin = as.character(year_begin),
+           year_begin = case_when(
+             row_number == 1 ~ year_begin,
+             year_begin == lag(year_begin) ~ str_c('<span class="repeated-year">', year_begin, '</span>'),
+             year_begin != lag(year_begin) ~ year_begin
+           )) %>% 
+    mutate(year = if_else(!is.na(lag(year)) & lag(year) == year, 
+                          str_c('<span class="repeated-year">', year, '</span>'),
+                          year))
+}
+```
+
+
+# Overview
+
+For my project I have chosen to analyze if a football player's performance 
+in college and at the NFL combine affects their success in the NFL. Front offices 
+in the NFL spend months grueling over what players they believe are the best fit 
+for their organization. Making the wrong selection could set a franchise back years 
+from their ultimate goal of winning a super bowl. My main topics of exploratory analysis are:
+
+* Which college teams/conferences produce:
+    + the most first round picks?
+    + the longest careers at each position?
+    + the most successful careers at each position?
+* What is the mean weighted career approximate value at each pick?
+* What position has the lowest/highest mean draft position in the first round?
+* How many players have been drafted in each round by position?
+* Do college All-Americans have longer/more successful careers?
+
+
+
+
+
+```{r}
+
+```
+
+
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
