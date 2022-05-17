@@ -66,7 +66,6 @@ When cleaning the data I relied heavily on R and excel. I used many of the funct
 
 ```{r}
 rmarkdown::paged_table(Malachy2022_04_24)
-
 ```
 
 
