@@ -54,7 +54,7 @@ Shrinkage is where data values are shrunk towards a central point, like the mean
 
 # Data
 
-##Data Collection
+## Data Collection
 
 For my analysis, I collected all of my data for the last 20 NFL drafts from Sports Reference. Sports Reference is a verified sports database that collects data on the four major sports (NFL, NBA, NHL, MLB).
 
