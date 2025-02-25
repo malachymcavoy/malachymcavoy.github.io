@@ -2,12 +2,23 @@
 title: "Personal Website"
 output:
   html_document:
-    theme: united
-    highlight: tango
+    theme: darkly
+    highlight: textmate
 ---
 
-How this was created
+How this was created:
+
+- Created in Spring 2022
+  - Updated Spring 2025
 
 - Hosted in Github
 
 - Built by Git and R Markdown with R Studio
+
+Uses:
+
+- Display Resume/CV
+
+- Present Senior year Capstone Project
+
+- Continue honing and sharpening my coding skills
