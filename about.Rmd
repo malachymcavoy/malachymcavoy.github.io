@@ -1,22 +1,19 @@
 ---
 title: "About Me"
 output:
+  pdf_document: default
   html_document:
-    theme: united
-    highlight: tango
+    theme: darkly
+    highlight: textmate
 ---
 
-__Name:__ Malachy McAvoy
+Hi, I'm Malachy McAvoy, a lifelong learner with a background in economics, data analytics, and machine learning. I'm passionate about leveraging data to uncover insights, build predictive models, and create impactful visualizations.
 
-__Occupation:__ Student
+I graduated from SUNY Geneseo in 2022 with a degree in Economics and a minor in Data Analytics. After graduation, I worked at Epic Systems from January 2023 to March 2024 as a Project Manager, where I gained experience implementing Revenue Cycle-focused healthcare software. During my time at Epic, I worked with notable customers such as Memorial Sloan Kettering Cancer Center in New York City.
 
-__Major:__ Economics
+Outside of work, I’m an avid sports fan. Growing up, I played a variety of sports, including lacrosse, football, basketball, baseball, and soccer, and I continue to stay active whenever possible. I’m a die-hard fan of the New York Giants, Knicks, Yankees, and Rangers, as well as Notre Dame Football and Arsenal F.C. In my free time, I enjoy working out, running, playing golf, listening to podcasts, and watching stand-up comedy.
 
-__Minor:__ Data Analytics
+Feel free to explore my projects, and don’t hesitate to reach out!
 
-__Hobbies:__ Football, Basketball, Lacrosse, Skiing, Golf, Music and Fishing
-
-Here is a photo of myself:
-
-![](AboutMePhoto.jpg){
+![](NewPhoto.jpg){
 width=50%}

@@ -13,10 +13,10 @@
 
 <title>About Me</title>
 
-<script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/darkly.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -30,6 +30,8 @@
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -40,6 +42,16 @@
   ul.task-list{list-style: none;}
     </style>
 
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
 
 
 
@@ -130,11 +142,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -163,8 +179,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -172,16 +188,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -269,13 +278,11 @@ $(document).ready(function () {
 </div>
 
 
-<p><strong>Name:</strong> Malachy McAvoy</p>
-<p><strong>Occupation:</strong> Student</p>
-<p><strong>Major:</strong> Economics</p>
-<p><strong>Minor:</strong> Data Analytics</p>
-<p><strong>Hobbies:</strong> Football, Basketball, Lacrosse, Skiing, Golf, Music and Fishing</p>
-<p>Here is a photo of myself:</p>
-<p><img src="AboutMePhoto.JPG" style="width:50.0%" /></p>
+<p>Hi, I’m Malachy McAvoy, a lifelong learner with a background in economics, data analytics, and machine learning. I’m passionate about leveraging data to uncover insights, build predictive models, and create impactful visualizations.</p>
+<p>I graduated from SUNY Geneseo in 2022 with a degree in Economics and a minor in Data Analytics. After graduation, I worked at Epic Systems from January 2023 to March 2024 as a Project Manager, where I gained experience implementing Revenue Cycle-focused healthcare software. During my time at Epic, I worked with notable customers such as Memorial Sloan Kettering Cancer Center in New York City.</p>
+<p>Outside of work, I’m an avid sports fan. Growing up, I played a variety of sports, including lacrosse, football, basketball, baseball, and soccer, and I continue to stay active whenever possible. I’m a die-hard fan of the New York Giants, Knicks, Yankees, and Rangers, as well as Notre Dame Football and Arsenal F.C. In my free time, I enjoy working out, running, playing golf, listening to podcasts, and watching stand-up comedy.</p>
+<p>Feel free to explore my projects, and don’t hesitate to reach out!</p>
+<p><img src="NewPhoto.jpg" style="width:50.0%" /></p>
 
 
 
