@@ -1,18 +1,19 @@
 ---
 title: "Resume<br><br>"
 menu: main
-output: 
+output:
+  pdf_document:
+    toc: yes
+    toc_depth: '2'
   html_document:
     df_print: paged
-    toc: true
+    toc: yes
     toc_depth: 2
-    toc_float: true
-    number_sections: false
-    theme: united
-    highlight: espresso
+    toc_float: yes
+    number_sections: no
+    theme: darkly
+    highlight: textmate
 ---
-
-
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
@@ -36,16 +37,25 @@ library(fontawesome)
 publications <- read_csv("_content/publications.csv")
 
 #### all other entries #####
-cv_entries <- read_csv("_content/cv_entries.csv") %>%
-  mutate(year_begin = year(date)) %>%
-  mutate(year_end = case_when(
-    date_end == "present" ~ date_end,
-    !is.na(date_end) ~ str_sub(date_end, 1, 4),
-    is.na(date_end) ~ date_end
-  )) %>%
-  mutate(year = ifelse((is.na(year_end) | year_begin == year_end),
-                      year_begin,
-                      str_c(year_begin, " --- ", year_end)))
+cv_entries <- read_csv("_content/cv_entries.csv", col_types = cols(
+  date = col_character(),
+  date_end = col_character()
+)) %>% 
+  mutate(
+    date = as.Date(date, format = "%Y-%m-%d"),  
+    date_end = ifelse(date_end == "present", NA_character_, date_end),  # Ensure NA is character
+    date_end = as.Date(date_end, format = "%Y-%m-%d")  # Convert only valid dates
+  ) %>%
+  mutate(
+    year_begin = year(date),
+    year_end = case_when(
+      is.na(date_end) ~ "present",
+      TRUE ~ as.character(year(date_end))
+    ),
+    year = if_else(year_begin == year_end, 
+                   as.character(year_begin), 
+                   str_c(year_begin, " --- ", year_end))
+  )
 
 
 blank_year_when_repeated <- function(cv_entry_tibble){
@@ -66,16 +76,11 @@ blank_year_when_repeated <- function(cv_entry_tibble){
 
 
 # Summary
+I am a data analytics professional with experience in Healthcare IT and Revenue Cycle Management. After graduating from SUNY Geneseo in 2022 with a degree in Economics and a minor in Data Analytics, I worked at Epic Systems as a Project Manager, implementing Revenue Cycle-focused healthcare software for major organizations like Memorial Sloan Kettering Cancer Center.
 
+At Epic, I specialized in data integration, process automation, and financial workflow optimization, working directly with hospital executives to improve operational efficiency. My experience has strengthened my skills in data analysis, software implementation, and project management within the healthcare space.
 
-
-I am currently a senior Economics major and Data Analytics minor at SUNY Geneseo. 
-Following my graduation in May of this year, I will be searching for positions as a
-data analyst, particularly in the growing field of sports analytics. I not only have a tremendous knowledge of all major sports, but I understand the power that sports has to bring together communities unite people around a common cause. While the world we live in seems to 
-be in constant turmoil, sports has the ability to make us forget all of that and enjoy 
-the simple things in life.
-
-My research utilizes econometrics/machine learning to analyze how certain variables affect a player's draft position. To expand even further, I wish to examine if these variables have any correlation in predicting a player's long term success in the league. I will be using draft, combine and college data from the past 20 years for my study. 
+I am now looking to apply my technical and analytical expertise to solve complex challenges in healthcare technology and data-driven decision-making. 
 
 
 ::: {}

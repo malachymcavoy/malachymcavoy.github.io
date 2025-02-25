@@ -13,10 +13,10 @@
 
 <title>Resume  </title>
 
-<script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/darkly.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -29,10 +29,12 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
@@ -47,6 +49,16 @@
   ul.task-list{list-style: none;}
     </style>
 
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
 
 
 
@@ -137,11 +149,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -170,8 +186,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -179,16 +195,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -351,8 +360,9 @@ div.tocify {
 
 <div id="summary" class="section level1">
 <h1>Summary</h1>
-<p>I am currently a senior Economics major and Data Analytics minor at SUNY Geneseo. Following my graduation in May of this year, I will be searching for positions as a data analyst, particularly in the growing field of sports analytics. I not only have a tremendous knowledge of all major sports, but I understand the power that sports has to bring together communities unite people around a common cause. While the world we live in seems to be in constant turmoil, sports has the ability to make us forget all of that and enjoy the simple things in life.</p>
-<p>My research utilizes econometrics/machine learning to analyze how certain variables affect a player’s draft position. To expand even further, I wish to examine if these variables have any correlation in predicting a player’s long term success in the league. I will be using draft, combine and college data from the past 20 years for my study.</p>
+<p>I am a data analytics professional with experience in Healthcare IT and Revenue Cycle Management. After graduating from SUNY Geneseo in 2022 with a degree in Economics and a minor in Data Analytics, I worked at Epic Systems as a Project Manager, implementing Revenue Cycle-focused healthcare software for major organizations like Memorial Sloan Kettering Cancer Center.</p>
+<p>At Epic, I specialized in data integration, process automation, and financial workflow optimization, working directly with hospital executives to improve operational efficiency. My experience has strengthened my skills in data analysis, software implementation, and project management within the healthcare space.</p>
+<p>I am now looking to apply my technical and analytical expertise to solve complex challenges in healthcare technology and data-driven decision-making.</p>
 <div>
 
 </div>
@@ -367,7 +377,7 @@ div.tocify {
 2019 — 2022
 </td>
 <td style="text-align:left;">
-<span class="cv-entry-title">B.A. in Economics, Minor in Data Analytics</span>, School of Business, SUNY Geneseo<br><br>
+<span class="cv-entry-title">B.A. in Economics, Minor in Data Analytics</span>, SUNY Geneseo<br><br>
 </td>
 </tr>
 </tbody>
@@ -380,10 +390,18 @@ div.tocify {
 <tbody>
 <tr>
 <td style="text-align:left;width: 15%; ">
+2023 — 2024
+</td>
+<td style="text-align:left;">
+<span class="cv-entry-title">Project Manager/Implementation Specialist</span><br class="work-break">Verona, WI<br>Managed the implementation of Epic Claims and Remittance software for high-profile clients, including Memorial Sloan Kettering Cancer Center (MSKCC), Florida Health Care Plans (FHCP), Central Ohio Primary Care (COPC), and St. Barnabas Hospital (SBH Health). Partnered with C-Suite Revenue Cycle Executives to optimize accounts receivable, payment posting, and reporting workflows, achieving a 20% reduction in claim denials and claim edit days. Led the planning and execution of 100+ end-to-end test scripts, ensuring system integrity and compliance while delivering projects on time and within budget. Spearheaded the transition of legacy end-user roles to new Epic roles, ensuring employees received appropriate training and system access prior to go-live.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 15%; ">
 2020 — 2021
 </td>
 <td style="text-align:left;">
-<span class="cv-entry-title">Solar Consultant Intern/Canvasser</span><br class="work-break">Ronkonkoma, NY<br>Initial door to door homeowner engagement offering free solar estimates
+<span class="cv-entry-title">Solar Consultant Intern/Canvasser</span><br class="work-break">Ronkonkoma, NY<br>Engaged homeowners door-to-door to offer free solar estimates, improving initial customer engagement. Advanced to an office role, where I calculated, analyzed, and developed customer saving plans based on energy usage data.
 </td>
 </tr>
 <tr>
@@ -391,7 +409,7 @@ div.tocify {
 2017 — 2018
 </td>
 <td style="text-align:left;">
-<span class="cv-entry-title">Event Manager</span><br class="work-break">Stony Brook, NY<br>Negotiated, booked and organized the setup of large scale events, where profits exceeded expectations by 15% YOY.
+<span class="cv-entry-title">Store Manager</span><br class="work-break">Stony Brook, NY<br>Managed inventory, ordered supplies, and restocked items to ensure smooth business operations. Oversaw sales transactions totaling over $5,000 per shift, maintaining accurate financial records. Directed and motivated staff to achieve high levels of customer satisfaction and operational efficiency.
 </td>
 </tr>
 </tbody>
@@ -407,7 +425,7 @@ div.tocify {
 2022
 </td>
 <td style="text-align:left;">
-<span class="cv-entry-title">Participating in a directed study for my data analytics minor</span>, School of Business, SUNY Geneseo
+<span class="cv-entry-title">Directed Study</span>, SUNY Geneseo
 </td>
 </tr>
 </tbody>
@@ -451,18 +469,10 @@ div.tocify {
 <tbody>
 <tr>
 <td style="text-align:left;width: 15%; ">
-2019 — present
+2019 — 2022
 </td>
 <td style="text-align:left;">
 <span class="cv-entry-title">Sigma Tau Psi Fraternity</span><br class="work-break">SUNY Geneseo<br>Took on multiple roles as Vice President, Secretary and Sergeant at Arms
-</td>
-</tr>
-<tr>
-<td style="text-align:left;width: 15%; ">
-2015 — 2018
-</td>
-<td style="text-align:left;">
-<span class="cv-entry-title">Room 4 Love</span><br class="work-break">Setauket, NY<br>I helped fundraise and renovate rooms for children battling cancer
 </td>
 </tr>
 </tbody>
