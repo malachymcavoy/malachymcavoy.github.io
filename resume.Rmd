@@ -6,5 +6,4 @@ output:
     theme: united
     highlight: tango
 ---
-
 ![](Malachy_McAvoy_Resume_2025.pdf){width=1000px height=1000px}
