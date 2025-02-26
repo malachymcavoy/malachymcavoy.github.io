@@ -1,15 +1,18 @@
 ---
 title: "Analyzing NFL Player Success"
 subtitle: Malachy McAvoy
-output: 
+output:
+  pdf_document:
+    toc: yes
+    toc_depth: '2'
   html_document:
     df_print: paged
-    toc: true
+    toc: yes
     toc_depth: 2
-    toc_float: true
-    number_sections: false
-    theme: united
-    highlight: espresso
+    toc_float: yes
+    number_sections: no
+    theme: darkly
+    highlight: textmate
 ---
 
 ```{r setup, include=FALSE}
@@ -62,6 +65,10 @@ For my analysis, I collected all of my data for the last 20 NFL drafts from Spor
 When cleaning the data I relied heavily on R and excel. I used many of the functions from the dplyr package in R to manipulate the data and remove any unwanted variables or duplicate observations. I noticed many NA and missing variables in the combine data which drove me towards using the lasso regression.
 
 ## NFL Draft Data
+
+```{r}
+Malachy2022_04_24 <- read.csv("/Users/malachymcavoy/Documents/DANL310/malachymcavoy.github.io/Malachy2022-04-24.csv")
+```
 
 
 
