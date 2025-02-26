@@ -4,13 +4,15 @@ author: "Malachy McAvoy"
 date: "2022-04-12"
 output:
   html_document:
-    theme: united
-    highlight: tango
+    theme: darkly
+    highlight: textmate
 ---
 
 # DANL-310 Project Proposal   
 
-  For my proposal I decided to take my two biggest passions, coding and sports, and combine them to create a fun and interesting project. My project will utilize data from the NFL combine as well as players’ college statistics and awards to determine if there are any relationships between a player’s combine and college performances and their success in the NFL.
-	While a lot of this may seem ridiculous to an outsider, for those who are heavily invested into the game of football from fans all the way up to the owner, this kind of stuff matters. In the eyes of the front office they are spending invaluable amounts of time and money on the players they draft. If they make the wrong selection it could end up costing the franchise tens of millions of dollars in a bad contract. Not only can a bad pick hurt their current economic standing, consecutive bad drafts can set a franchise back years in their hopes of the ultimate goal, winning a Super Bowl. In order to maximize their draft picks, teams must now use every resource available to them to gain an edge. Modern day sports are moving towards analytics whether fans like it or not. It's about time every NFL team embraces this strategy and looks to the stats to determine a player’s potential.
-	I believe that a player’s performance at the combine measurements and in college are excellent indicators of a player’s NFL career. As result, my null hypothesis for this project is that a player’s performance at the combine and in college does not have an impact on a player’s success in the NFL. I have already collected data from Sports Reference on all players drafted over the last 20 years from 2001-2021, including their combine measurements. I did experience issues collecting the college data of drafted players from the website so I asked Professor Kirk Anne for some assistance with scraping the data. I will create dummy variables for each combine category and college stat to establish benchmarks at each position.
+  For my project proposal, I’ve decided to merge two of my greatest passions—coding and sports—into a fun and insightful analysis. My project will explore the relationships between NFL combine performance, college statistics, and subsequent NFL success. Using data from the NFL combine and players’ college achievements, I aim to determine if there are any significant correlations that can predict a player's professional success in the NFL.
+
+  While this analysis may seem trivial to some, it holds substantial value for those deeply invested in the sport—ranging from fans to team executives. For NFL front offices, drafting the right player is a high-stakes decision that involves significant time and financial investments. A poor selection can result in millions of dollars wasted on a bad contract, and consecutive missteps in drafting can derail a franchise's long-term goals, including their chances at a Super Bowl. Therefore, maximizing draft success is critical, and analytics can provide a competitive edge. It's becoming clear that modern sports are embracing the power of analytics, and the NFL should fully integrate this strategy to evaluate player potential more effectively.
+
+  My hypothesis is that a player’s performance in both the combine and college significantly impacts their NFL career success. The null hypothesis for this study is that there is no relationship between a player’s combine performance, college statistics, and their success in the NFL. To test this, I have already gathered data from Sports Reference on all players drafted from 2001 to 2021, including their combine measurements. Although I faced challenges in collecting the college data for drafted players, I reached out to Professor Kirk Anne for help with scraping the necessary information. To analyze the data, I plan to create dummy variables for each combine category and college statistic, establishing benchmarks for each position to assess their predictive power.
 

@@ -15,10 +15,10 @@
 
 <title>Data Visualization Project Proposal</title>
 
-<script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/darkly.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -32,6 +32,8 @@
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -42,6 +44,16 @@
   ul.task-list{list-style: none;}
     </style>
 
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
 
 
 
@@ -132,11 +144,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -165,8 +181,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -174,16 +190,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -249,6 +258,9 @@ $(document).ready(function () {
   <a href="resume.html">Resume</a>
 </li>
 <li>
+  <a href="AnalyzingNFLPlayerSuccess.html">NFL Player Success Project</a>
+</li>
+<li>
   <a href="ProjectProposal.html">Project Proposal</a>
 </li>
       </ul>
@@ -272,7 +284,9 @@ $(document).ready(function () {
 
 <div id="danl-310-project-proposal" class="section level1">
 <h1>DANL-310 Project Proposal</h1>
-<p>For my proposal I decided to take my two biggest passions, coding and sports, and combine them to create a fun and interesting project. My project will utilize data from the NFL combine as well as players’ college statistics and awards to determine if there are any relationships between a player’s combine and college performances and their success in the NFL. While a lot of this may seem ridiculous to an outsider, for those who are heavily invested into the game of football from fans all the way up to the owner, this kind of stuff matters. In the eyes of the front office they are spending invaluable amounts of time and money on the players they draft. If they make the wrong selection it could end up costing the franchise tens of millions of dollars in a bad contract. Not only can a bad pick hurt their current economic standing, consecutive bad drafts can set a franchise back years in their hopes of the ultimate goal, winning a Super Bowl. In order to maximize their draft picks, teams must now use every resource available to them to gain an edge. Modern day sports are moving towards analytics whether fans like it or not. It’s about time every NFL team embraces this strategy and looks to the stats to determine a player’s potential. I believe that a player’s performance at the combine measurements and in college are excellent indicators of a player’s NFL career. As result, my null hypothesis for this project is that a player’s performance at the combine and in college does not have an impact on a player’s success in the NFL. I have already collected data from Sports Reference on all players drafted over the last 20 years from 2001-2021, including their combine measurements. I did experience issues collecting the college data of drafted players from the website so I asked Professor Kirk Anne for some assistance with scraping the data. I will create dummy variables for each combine category and college stat to establish benchmarks at each position.</p>
+<p>For my project proposal, I’ve decided to merge two of my greatest passions—coding and sports—into a fun and insightful analysis. My project will explore the relationships between NFL combine performance, college statistics, and subsequent NFL success. Using data from the NFL combine and players’ college achievements, I aim to determine if there are any significant correlations that can predict a player’s professional success in the NFL.</p>
+<p>While this analysis may seem trivial to some, it holds substantial value for those deeply invested in the sport—ranging from fans to team executives. For NFL front offices, drafting the right player is a high-stakes decision that involves significant time and financial investments. A poor selection can result in millions of dollars wasted on a bad contract, and consecutive missteps in drafting can derail a franchise’s long-term goals, including their chances at a Super Bowl. Therefore, maximizing draft success is critical, and analytics can provide a competitive edge. It’s becoming clear that modern sports are embracing the power of analytics, and the NFL should fully integrate this strategy to evaluate player potential more effectively.</p>
+<p>My hypothesis is that a player’s performance in both the combine and college significantly impacts their NFL career success. The null hypothesis for this study is that there is no relationship between a player’s combine performance, college statistics, and their success in the NFL. To test this, I have already gathered data from Sports Reference on all players drafted from 2001 to 2021, including their combine measurements. Although I faced challenges in collecting the college data for drafted players, I reached out to Professor Kirk Anne for help with scraping the necessary information. To analyze the data, I plan to create dummy variables for each combine category and college statistic, establishing benchmarks for each position to assess their predictive power.</p>
 </div>
 
 
