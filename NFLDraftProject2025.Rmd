@@ -23,6 +23,7 @@ library(glmnet)
 library(dplyr)
 library(tidyverse)
 library(broom)
+Malachy2022_04_24 <- read.csv("/Users/malachymcavoy/Documents/DANL310/malachymcavoy.github.io/Malachy2022-04-24.csv")
 ```
 
 # Introduction
