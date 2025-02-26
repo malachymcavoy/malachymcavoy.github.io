@@ -359,13 +359,12 @@ div.tocify {
 
 <div id="introduction" class="section level1">
 <h1>Introduction</h1>
-<div id="project-motivation" class="section level2">
-<h2>Project Motivation</h2>
+<div id="project-motivation" class="section level3">
+<h3>Project Motivation</h3>
 <p>NFL teams spend endless amounts of time and money preparing for the draft. In order to maximize their draft picks, teams must now use every resource available to them to gain an edge. Modern day sports are moving towards analytics whether fans like it or not. It’s about time every NFL team embraces this strategy and looks to the stats to determine a player’s potential. But the question still remains, does all this analyzing actually matter when determining how long and successful a player’s career will be? Or should teams just stick to the basics such as what school they played for or if they were an All-American in college? To analyze this, my model will look at the relationship between variables such as a player’s 40-yard dash time at the combine or what conference their college team played in and their effect on a player’s career weighted approximate value.</p>
-<p><br></p>
 </div>
-<div id="research-questions" class="section level2">
-<h2>Research Questions</h2>
+<div id="research-questions" class="section level3">
+<h3>Research Questions</h3>
 <ul>
 <li>Does a player’s college or performance at the NFL combine affect their long-term success in the league?</li>
 <li>Which college teams produce:
@@ -380,26 +379,25 @@ div.tocify {
 <li>How many players have been drafted in each round by position?</li>
 <li>Do college All-Americans have longer/more successful careers?</li>
 </ul>
-<p><br></p>
 </div>
-<div id="modeling-technique" class="section level2">
-<h2>Modeling Technique</h2>
+<div id="modeling-technique" class="section level3">
+<h3>Modeling Technique</h3>
 <p>Lasso Regression: Least Absolute Shrinkage and Selection Operator Shrinkage is where data values are shrunk towards a central point, like the mean. The lasso procedure encourages simple, sparse models (i.e., models with fewer parameters). This particular type of regression is well-suited for models showing high levels of multicollinearity or when you want to automate certain parts of model selection, like variable selection/parameter elimination.</p>
 <p><br></p>
 </div>
 </div>
 <div id="data" class="section level1">
 <h1>Data</h1>
-<div id="data-collection" class="section level2">
-<h2>Data Collection</h2>
+<div id="data-collection" class="section level3">
+<h3>Data Collection</h3>
 <p>For my analysis, I collected all of my data for the last 20 NFL drafts from Sports Reference. Sports Reference is a verified sports database that collects data on the four major sports (NFL, NBA, NHL, MLB).</p>
 </div>
-<div id="data-cleaning" class="section level2">
-<h2>Data Cleaning</h2>
+<div id="data-cleaning" class="section level3">
+<h3>Data Cleaning</h3>
 <p>When cleaning the data I relied heavily on R and Excel. I used many of the functions from the dplyr package in R to manipulate the data and remove any unwanted variables or duplicate observations. I noticed many NA and missing variables in the combine data which drove me towards using the lasso regression.</p>
 </div>
-<div id="nfl-draft-data" class="section level2">
-<h2>NFL Draft Data</h2>
+<div id="nfl-draft-data" class="section level3">
+<h3>NFL Draft Data</h3>
 <pre class="r"><code>rmarkdown::paged_table(Malachy2022_04_24)</code></pre>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
@@ -461,63 +459,68 @@ div.tocify {
 </div>
 <div id="conceptual-framework" class="section level1">
 <h1>Conceptual Framework</h1>
-<div id="exploratory-visualizations" class="section level2">
-<h2>Exploratory Visualizations</h2>
-<p><img src="AvgFRDPP.png" width="270" /> In this graph I looked at the average first round pick by position. You can see that quarterbacks have the lowest average first round pick, followed by offensive tackles. This means that on average, quarterbacks and tackles have been drafted the highest in the first round. This makes absolutely perfect sense as quarterbacks are the most valuable position in all of football. Offensive tackles have also become one of the most important and expensive positions as they are the last line of defense to a quarterback and protect a quarterback’s blindside. We see that positions like Center and Guard have the highest average position. Both of these positions are viewed as interchangeable which could be a reason why many teams don’t value drafting these players as much because they can plug in other players at these positions much easier.</p>
-<p><img src="NumPDER.png" width="270" /> Here is another look at player positions and how many have been drafted in each round over the last 20 drafts. We can see again that most quarterbacks tend to go in the first round and then drop off. Positions like wide receiver and defensive back who matchup against each other on the field have similar trends over the rounds. Running Backs have begun to go in rounds 3 and 4 more often as teams have began to realize that running backs have short careers and that are much more replaceable than other positions in the sport.</p>
-<p><img src="CollegeMFRP.png" width="304" /> In this graph I examined the college teams with the most first round draft picks in the last 20 NFL drafts. The big name schools stood out like Alabama and Ohio State, but what surprised me was how many the University of Miami had. While they had excellent teams in the 1980s, 90s and early 2000s, their team has been pretty irrelevant in the college football world in terms of winning the last two decades. I would be curious to see how many of their first round draft picks were from those early 2000s teams and how many have come in the past decade.</p>
-<p><img src="PickNLC.png" width="270" /> The graph above shows the relationship between pick number and the average length of a player’s career at that pick position. The linear relationship shows a steady decreasing trend pick pick position and average length of career which matches what I thought going in. What stood out were the outliers around pick 100, 220 and 240. Each of these picks had an average career length of 9.5 or higher. That’s even higher than the average career length of the first overall pick. It’s quite strange for these averages to be this high as teams would have to consistently hit on these picks and these players would have to avoid any career ending injuries to remain in the league for that long.</p>
-<p><img src="AvgCwAVP.png" width="270" /> This final graph displays the average career weighted approximate value by position for the last 20 years. Career weighted approximate value, or wAV, is a measurement of how good a player performed over the course of his career. We can see here that centers actually have the highest wAV followed by quarterbacks and tackles. This is extremely ironic as centers had the highest average first round draft position out of all the player positions, while quarterbacks and tackles had the lowest. This goes to show that it doesn’t matter where you are drafted, anyone can be great as long as they put in time and effort.</p>
+<div id="exploratory-visualizations" class="section level3">
+<h3>Exploratory Visualizations</h3>
+<p><img src="AvgFRDPP.png" width="270" /></p>
+<p>In this graph I looked at the average first round pick by position. You can see that quarterbacks have the lowest average first round pick, followed by offensive tackles. This means that on average, quarterbacks and tackles have been drafted the highest in the first round. This makes absolutely perfect sense as quarterbacks are the most valuable position in all of football. Offensive tackles have also become one of the most important and expensive positions as they are the last line of defense to a quarterback and protect a quarterback’s blindside. We see that positions like Center and Guard have the highest average position. Both of these positions are viewed as interchangeable which could be a reason why many teams don’t value drafting these players as much because they can plug in other players at these positions much easier.</p>
+<p><img src="NumPDER.png" width="270" /></p>
+<p>Here is another look at player positions and how many have been drafted in each round over the last 20 drafts. We can see again that most quarterbacks tend to go in the first round and then drop off. Positions like wide receiver and defensive back who matchup against each other on the field have similar trends over the rounds. Running Backs have begun to go in rounds 3 and 4 more often as teams have began to realize that running backs have short careers and that are much more replaceable than other positions in the sport.</p>
+<p><img src="CollegeMFRP.png" width="304" /></p>
+<p>In this graph I examined the college teams with the most first round draft picks in the last 20 NFL drafts. The big name schools stood out like Alabama and Ohio State, but what surprised me was how many the University of Miami had. While they had excellent teams in the 1980s, 90s and early 2000s, their team has been pretty irrelevant in the college football world in terms of winning the last two decades. I would be curious to see how many of their first round draft picks were from those early 2000s teams and how many have come in the past decade.</p>
+<p><img src="PickNLC.png" width="270" /></p>
+<p>The graph above shows the relationship between pick number and the average length of a player’s career at that pick position. The linear relationship shows a steady decreasing trend pick pick position and average length of career which matches what I thought going in. What stood out were the outliers around pick 100, 220 and 240. Each of these picks had an average career length of 9.5 or higher. That’s even higher than the average career length of the first overall pick. It’s quite strange for these averages to be this high as teams would have to consistently hit on these picks and these players would have to avoid any career ending injuries to remain in the league for that long.</p>
+<p><img src="AvgCwAVP.png" width="270" /></p>
+<p>This final graph displays the average career weighted approximate value by position for the last 20 years. Career weighted approximate value, or wAV, is a measurement of how good a player performed over the course of his career. We can see here that centers actually have the highest wAV followed by quarterbacks and tackles. This is extremely ironic as centers had the highest average first round draft position out of all the player positions, while quarterbacks and tackles had the lowest. This goes to show that it doesn’t matter where you are drafted, anyone can be great as long as they put in time and effort.</p>
 <p><br></p>
 </div>
 </div>
 <div id="model" class="section level1">
 <h1>Model</h1>
-<div id="lasso-linear-regression-analysis" class="section level2">
-<h2>Lasso Linear Regression Analysis</h2>
+<div id="lasso-linear-regression-analysis" class="section level3">
+<h3>Lasso Linear Regression Analysis</h3>
 <p>As mentioned earlier, I relied on lasso linear regression modeling to analyze my data. A lasso regression can be extremely helpful when dealing with missing values. My dataset contained large amounts of missing values making it the perfect linear regression model for my analysis. As previously mentioned, the model uses a shrinkage technique that penalizes the betas as lambda increases. The NA or missing values are used as the 0 value parameter. As λ increases, bias increases and variance decreases. I also used cross-validation to find error estimates in my modeling.</p>
 </div>
-<div id="career-weighted-approximate-value-lasso-regression" class="section level2">
-<h2>Career Weighted Approximate Value Lasso Regression</h2>
+<div id="career-weighted-approximate-value-lasso-regression" class="section level3">
+<h3>Career Weighted Approximate Value Lasso Regression</h3>
 <p><span class="math display">\[
 wAV_{i} = \beta_{0} + \beta_{1} DrAge_{i} + \beta_{2} Height_{i} + \beta_{3} Wt_{i} + \beta_{4} X40YD_{i} + \beta_{5} Vertical_{i} + \beta_{6} BenchReps_{i} + \beta_{7} Broad.Jump_{i} + \beta_{8} X3Cone_{i} + \beta_{9} Shuttle_{i} + \beta_{10} SEC_{i} + \beta_{11} BIG10_{i} + \beta_{12} BIG12_{i} + \beta_{13} PAC12_{i} + \beta_{14} ACC_{i} + \beta_{15} AA_{i} + \beta_{16} QB_{i} + \beta_{17} Skill_{i} + \beta_{18} OL_{i} + \beta_{19} DL_{i} + \beta_{20} LB_{i} + \beta_{21} DB_{i} + \beta_{22} K_{i} + \epsilon_{i}
 \]</span></p>
 </div>
-</div>
-<div id="remove-rows-with-missing-values-in-relevant-columns" class="section level1">
-<h1>Remove rows with missing values in relevant columns</h1>
+<div id="remove-rows-with-missing-values-in-relevant-columns" class="section level3">
+<h3>Remove rows with missing values in relevant columns</h3>
 <p>clean_data &lt;- Malachy2022_04_24 %&gt;% select(wAV, DrAge, Height, Wt, X40YD, Vertical, BenchReps, Broad.Jump, X3Cone, Shuttle, SEC, BIG10, BIG12, PAC12, ACC, AA, QB, Skill, OL, DL, LB, DB, K) %&gt;% na.omit() # Removes rows with any missing values</p>
 </div>
-<div id="define-independent-variables-and-target-variable" class="section level1">
-<h1>Define independent variables and target variable</h1>
+<div id="define-independent-variables-and-target-variable" class="section level3">
+<h3>Define independent variables and target variable</h3>
 <p>X &lt;- model.matrix(wAV ~ DrAge + Height + Wt + X40YD + Vertical + BenchReps + Broad.Jump + X3Cone + Shuttle + SEC + BIG10 + BIG12 + PAC12 + ACC + AA + QB + Skill + OL + DL + LB + DB + K, data = clean_data)[, -1] # Remove intercept column</p>
 <p>y &lt;- clean_data$wAV # Target variable</p>
 </div>
-<div id="fit-lasso-regression-model" class="section level1">
-<h1>Fit Lasso Regression Model</h1>
+<div id="fit-lasso-regression-model" class="section level3">
+<h3>Fit Lasso Regression Model</h3>
 <p>lasso_model &lt;- glmnet(X, y, alpha = 1) # alpha = 1 for Lasso</p>
 </div>
-<div id="cross-validation-to-find-optimal-lambda" class="section level1">
-<h1>Cross-validation to find optimal lambda</h1>
+<div id="cross-validation-to-find-optimal-lambda" class="section level3">
+<h3>Cross-validation to find optimal lambda</h3>
 <p>cv_lasso &lt;- cv.glmnet(X, y, alpha = 1)</p>
 </div>
-<div id="best-model-with-optimal-lambda" class="section level1">
-<h1>Best model with optimal lambda</h1>
+<div id="best-model-with-optimal-lambda" class="section level3">
+<h3>Best model with optimal lambda</h3>
 <p>reg1 &lt;- glmnet(X, y, alpha = 1, lambda = cv_lasso$lambda.min)</p>
 </div>
-<div id="display-model-summary-optional" class="section level1">
-<h1>Display model summary (optional)</h1>
+<div id="display-model-summary-optional" class="section level3">
+<h3>Display model summary (optional)</h3>
 <p>print(reg1)</p>
 <p><br></p>
 </div>
+</div>
 <div id="results" class="section level1">
 <h1>Results</h1>
-<div id="extract-nonzero-lasso-coefficients" class="section level2">
-<h2>Extract nonzero Lasso coefficients</h2>
+<div id="extract-nonzero-lasso-coefficients" class="section level3">
+<h3>Extract nonzero Lasso coefficients</h3>
 <p>lasso_results_filtered &lt;- tidy(reg1) %&gt;% filter(estimate != 0)</p>
 </div>
-<div id="display-results-in-a-formatted-table" class="section level2">
-<h2>Display results in a formatted table</h2>
+<div id="display-results-in-a-formatted-table" class="section level3">
+<h3>Display results in a formatted table</h3>
 <p>stargazer(lasso_results_filtered, type = “text”, title = “Nonzero Lasso Coefficients”, digits = 3, summary = FALSE)</p>
 <p><img src="cvErrors.png" width="50%" /></p>
 <p><img src="numNZBL.png" width="50%" /></p>
