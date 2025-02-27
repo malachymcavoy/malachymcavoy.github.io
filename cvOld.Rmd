@@ -1,5 +1,5 @@
 ---
-title: "Curriculum Vitae"
+title: "Resume<br><br>"
 menu: main
 output:
   pdf_document:
@@ -121,6 +121,19 @@ cv_entries %>%
 
 <br>
 
+# Professional activities
+```{r}
+cv_entries %>% 
+  filter(type == 'prof-act') %>% 
+  mutate(what = str_c("<span class='cv-entry-title'>", what, "</span>, ", where)) %>% 
+  select(year_begin, what) %>% 
+  kbl(padding = 0, col.names = NULL, align = c("l", "l"), escape = FALSE) %>%
+  kable_styling( bootstrap_options = c("hover", "condensed")) %>% 
+  column_spec(1, width = "15%")  
+```
+
+<br>
+
 # Miscelaneous
 
 ### Computing skills
@@ -140,6 +153,7 @@ cv_entries %>%
 ```
 
 <br>
+
 
 ### Skills & volunteering
 ```{r}
